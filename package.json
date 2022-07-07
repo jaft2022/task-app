@@ -1,5 +1,5 @@
 {
-  "name": "counter-pinia",
+  "name": "task-app",
   "private": true,
   "version": "0.0.0",
   "scripts": {

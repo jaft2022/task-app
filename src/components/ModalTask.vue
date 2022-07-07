@@ -171,10 +171,10 @@ import { useToDoStore } from '../stores/toDo'
         emit('closeModal')
     }
     function getFormValues(){
-      if(taskData.taskName === ''){
+      if(taskData.taskName.trim() === '' && taskData.taskName.length < 4){
         errorTaskName.value = true
       }
-      else if(taskData.description === ''){
+      if(taskData.description.trim() === '' && taskData.description.length < 4){
         errorDescription.value = true
       }else {
         console.log(taskData)

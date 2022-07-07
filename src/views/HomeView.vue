@@ -10,11 +10,20 @@
 </div>
   <!-- TASKS -->
   <main class="mb-32">
+    <div v-if="tabDoneIsOpen && toDoListStore.allToDoDoneList().length < 1">
+      Nothin To Show
+    </div>
     <div v-if="tabDoneIsOpen" v-for="task in toDoListStore.allToDoDoneList()">
       <Task :task="task"/>
     </div>
+    <div v-if="tabAllIsOpen && toDoListStore.toDoList.length < 1">
+      Nothin To Show
+    </div>
     <div v-if="tabAllIsOpen" v-for="task in toDoListStore.toDoList">
       <Task :task="task"/>
+    </div>
+    <div v-if="tabPendingIsOpen && toDoListStore.allToDoPendingList() < 1">
+      Nothin To Show
     </div>
     <div v-if="tabPendingIsOpen" v-for="task in toDoListStore.allToDoPendingList()">
       <Task :task="task"/>
